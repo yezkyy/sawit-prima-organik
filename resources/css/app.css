@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @apply font-body bg-background text-dark overflow-x-hidden;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Selection
+|--------------------------------------------------------------------------
+*/
+::selection {
+    background: #D8A320;
+    color: white;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Scrollbar
+|--------------------------------------------------------------------------
+*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4f4f4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0F4D2E;
+    border-radius: 999px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Container
+|--------------------------------------------------------------------------
+*/
+.container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Section
+|--------------------------------------------------------------------------
+*/
+.section-padding {
+    @apply py-24 lg:py-32;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Typography
+|--------------------------------------------------------------------------
+*/
+.hero-title {
+    @apply font-heading text-5xl lg:text-7xl font-black leading-[1.1];
+}
+
+.section-title {
+    @apply font-heading text-3xl lg:text-5xl font-bold leading-tight;
+}
+
+.section-subtitle {
+    @apply text-lg text-gray-600 mt-6 mb-12 max-w-3xl mx-auto;
+}
+
+.card-title {
+    @apply text-lg lg:text-xl font-bold;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+*/
+.btn-primary {
+    @apply inline-flex items-center gap-3 rounded-xl bg-primary px-7 py-4 text-white font-medium transition-all duration-300;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(15,77,46,.25);
+}
+
+.btn-secondary {
+    @apply inline-flex items-center gap-3 rounded-xl bg-accent px-7 py-4 text-white font-medium transition-all duration-300;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(216,163,32,.25);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Cards
+|--------------------------------------------------------------------------
+*/
+.card-premium {
+    @apply bg-white rounded-3xl p-8;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.05);
+}
+
+.card-premium:hover {
+    transform: translateY(-10px);
+    transition: all .4s ease;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Glass
+|--------------------------------------------------------------------------
+*/
+.glass-card {
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,.75);
+    border: 1px solid rgba(255,255,255,.3);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Gradient Text
+|--------------------------------------------------------------------------
+*/
+.gradient-text {
+    background:
+        linear-gradient(
+            90deg,
+            #0F4D2E,
+            #2D7A45,
+            #D8A320
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Hero
+|--------------------------------------------------------------------------
+*/
+.hero-gradient {
+    background:
+        linear-gradient(
+            135deg,
+            #0F4D2E 0%,
+            #2D7A45 55%,
+            #D8A320 100%
+        );
+}
+
+.hero-overlay {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255,255,255,.15),
+            transparent 40%
+        );
+}
+
+/*
+|--------------------------------------------------------------------------
+| Floating Product
+|--------------------------------------------------------------------------
+*/
+.float-animation {
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+/*
+|--------------------------------------------------------------------------
+| Hover
+|--------------------------------------------------------------------------
+*/
+.hover-lift {
+    transition: all .35s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Shadow
+|--------------------------------------------------------------------------
+*/
+.shadow-soft {
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.08);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Stats
+|--------------------------------------------------------------------------
+*/
+.stat-number {
+    @apply text-5xl font-bold text-primary;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Premium Effects
+|--------------------------------------------------------------------------
+*/
+.spotlight {
+    position: relative;
+    overflow: hidden;
+}
+
+.spotlight::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(216,163,32,0.15) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.bg-pattern {
+    background-image: radial-gradient(#0F4D2E 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+    opacity: 0.1;
+}
+
+.card-nutrition {
+    @apply relative overflow-hidden rounded-2xl p-6 bg-white border border-gray-100 transition-all duration-500;
+}
+
+.card-nutrition:hover {
+    @apply shadow-2xl border-primary/20;
+    transform: translateY(-5px);
+}
+
+.card-nutrition::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    @apply bg-primary;
+}
+
+.glass-dark {
+    backdrop-filter: blur(10px);
+    background: rgba(15, 77, 46, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-gradient-gold {
+    background: linear-gradient(135deg, #D8A320 0%, #F2C94C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Swiper Customization
+|--------------------------------------------------------------------------
+*/
+.swiper-pagination-bullet-active {
+    background: #0F4D2E !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #0F4D2E !important;
+}
+
+/*
+|--------------------------------------------------------------------------
+| AOS Customization
+|--------------------------------------------------------------------------
+*/
+[data-aos] {
+    pointer-events: none;
+}
+
+.aos-animate {
+    pointer-events: auto;
+}
+
+/*
+|--------------------------------------------------------------------------
+| WhatsApp Floating
+|--------------------------------------------------------------------------
+*/
+.whatsapp-float {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 999;
+}
+
+.whatsapp-float a {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    background: #25D366;
+
+    color: white;
+
+    font-size: 28px;
+
+    box-shadow:
+        0 10px 30px rgba(37,211,102,.35);
+
+    animation:
+        pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(37,211,102,0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,0);
+    }
+
+}
