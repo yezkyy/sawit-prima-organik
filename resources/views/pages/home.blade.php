@@ -32,14 +32,12 @@
                             Konsultasi Gratis <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                         <div class="flex items-center gap-4">
-                            <div class="flex -space-x-3">
-                                <img src="https://i.pravatar.cc/150?u=1" class="w-10 h-10 rounded-full border-2 border-primary">
-                                <img src="https://i.pravatar.cc/150?u=2" class="w-10 h-10 rounded-full border-2 border-primary">
-                                <img src="https://i.pravatar.cc/150?u=3" class="w-10 h-10 rounded-full border-2 border-primary">
+                            <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-accent text-xl backdrop-blur-md">
+                                <i class="fas fa-users"></i>
                             </div>
                             <div class="text-sm">
-                                <p class="font-bold text-white">5,000+ Petani</p>
-                                <p class="text-white/50 text-xs">Puas dengan Hasilnya</p>
+                                <p class="font-bold text-white">5,000+ Mitra Petani</p>
+                                <p class="text-white/50 text-xs">Telah Membuktikan Hasilnya</p>
                             </div>
                         </div>
                     </div>
@@ -48,11 +46,11 @@
                 <!-- Product Showcase (Hero) -->
                 <div class="relative order-1 lg:order-2" data-aos="fade-left">
                     <div class="relative z-10 hero-image">
-                        <div class="absolute inset-0 bg-accent/20 blur-[120px] rounded-full"></div>
-                        <img src="{{ asset('images/products/packaging-mockup.png') }}" alt="Sawit Prima Organik Packaging" class="relative z-10 w-full max-w-[450px] mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.4)] float-animation" onerror="this.src='https://placehold.co/600x800/0F4D2E/D8A320?text=Produk+Sawit+Prima'">
+                        <div class="absolute inset-0 bg-accent/20 blur-[150px] rounded-full"></div>
+                        <img src="{{ asset('images/products/Sawit_Prima_Front.png') }}" alt="Sawit Prima Organik Packaging" class="relative z-10 w-full max-w-[500px] mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] float-animation" onerror="this.src='https://placehold.co/600x800/0F4D2E/D8A320?text=Sawit+Prima+Front'">
                         
                         <!-- Floating Badges -->
-                        <div class="absolute top-1/4 -left-4 lg:-left-12 glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce shadow-accent/10" style="animation-duration: 3s">
+                        <div class="absolute top-1/4 -left-4 lg:-left-12 z-20 glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce shadow-accent/10" style="animation-duration: 3s">
                             <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
                                 <i class="fas fa-leaf"></i>
                             </div>
@@ -62,7 +60,7 @@
                             </div>
                         </div>
 
-                        <div class="absolute bottom-1/4 -right-4 lg:-right-12 glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce shadow-primary/10" style="animation-duration: 4s">
+                        <div class="absolute bottom-1/4 -right-4 lg:-right-12 z-20 glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce shadow-primary/10" style="animation-duration: 4s">
                             <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-white">
                                 <i class="fas fa-flask"></i>
                             </div>
@@ -81,11 +79,23 @@
     <section class="py-12 bg-white border-b border-gray-100">
         <div class="container-custom">
             <p class="text-center text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-8">Pilihan Utama Perkebunan Sawit Modern</p>
-            <div class="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-40 grayscale">
-                <img src="https://placehold.co/150x50/white/0F4D2E?text=KEMENTAN" alt="Logo 1" class="h-10">
-                <img src="https://placehold.co/150x50/white/0F4D2E?text=SUCOFINDO" alt="Logo 2" class="h-10">
-                <img src="https://placehold.co/150x50/white/0F4D2E?text=LPPOM+MUI" alt="Logo 3" class="h-10">
-                <img src="https://placehold.co/150x50/white/0F4D2E?text=ORGANIC" alt="Logo 4" class="h-10">
+            <div class="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
+                <div class="px-6 py-3 rounded-xl border border-gray-100 bg-gray-50/50 flex items-center gap-3 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <i class="fas fa-certificate text-primary"></i>
+                    <span class="font-black text-primary tracking-tighter">KEMENTAN RI</span>
+                </div>
+                <div class="px-6 py-3 rounded-xl border border-gray-100 bg-gray-50/50 flex items-center gap-3 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <i class="fas fa-check-double text-primary"></i>
+                    <span class="font-black text-primary tracking-tighter">SUCOFINDO</span>
+                </div>
+                <div class="px-6 py-3 rounded-xl border border-gray-100 bg-gray-50/50 flex items-center gap-3 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <i class="fas fa-mosque text-primary"></i>
+                    <span class="font-black text-primary tracking-tighter">LPPOM MUI</span>
+                </div>
+                <div class="px-6 py-3 rounded-xl border border-gray-100 bg-gray-50/50 flex items-center gap-3 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <i class="fas fa-leaf text-primary"></i>
+                    <span class="font-black text-primary tracking-tighter">ORGANIC CERTIFIED</span>
+                </div>
             </div>
         </div>
     </section>
@@ -123,6 +133,116 @@
         </div>
     </section>
 
+    <!-- Product Showcase Section -->
+    <section class="section-padding bg-white relative overflow-hidden">
+        <div class="container-custom">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <span class="text-primary font-black tracking-widest uppercase text-sm">Our Premium Product</span>
+                <h2 class="section-title text-primary mt-4">Solusi Nutrisi Kelapa Sawit Terintegrasi</h2>
+                <div class="w-20 h-1.5 bg-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Product Front -->
+                <div class="relative group" data-aos="fade-right">
+                    <div class="absolute inset-0 bg-primary/5 rounded-[3rem] transition-all duration-700 group-hover:bg-primary/10"></div>
+                    <div class="relative p-12 text-center">
+                        <img src="{{ asset('images/products/Sawit_Prima_Front.png') }}" alt="Sawit Prima Front" class="w-full max-w-[400px] mx-auto drop-shadow-2xl transition-transform duration-700 group-hover:scale-105">
+                        <div class="mt-8">
+                            <h4 class="text-2xl font-black text-primary mb-2 tracking-tighter">Sisi Depan</h4>
+                            <p class="text-dark/50 font-bold uppercase tracking-widest text-xs">Identitas & Brand Utama</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Back -->
+                <div class="relative group" data-aos="fade-left">
+                    <div class="absolute inset-0 bg-primary/5 rounded-[3rem] transition-all duration-700 group-hover:bg-primary/10"></div>
+                    <div class="relative p-12 text-center">
+                        <img src="{{ asset('images/products/Sawit_Prima_Back.png') }}" alt="Sawit Prima Back" class="w-full max-w-[400px] mx-auto drop-shadow-2xl transition-transform duration-700 group-hover:scale-105">
+                        <div class="mt-8">
+                            <h4 class="text-2xl font-black text-primary mb-2 tracking-tighter">Sisi Belakang</h4>
+                            <p class="text-dark/50 font-bold uppercase tracking-widest text-xs">Instruksi & Kandungan Teknis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 text-center" data-aos="fade-up">
+                <a href="{{ route('product') }}" class="btn-primary px-12 py-5 text-xl font-black shadow-2xl hover:scale-105 transition-all">
+                    Lihat Detail Produk <i class="fas fa-search-plus ml-3"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Makna Logo Section -->
+    <section class="section-padding bg-white relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full -ml-32 -mb-32"></div>
+        <div class="container-custom relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Left: Big Logo -->
+                <div class="relative" data-aos="fade-right">
+                    <div class="absolute inset-0 bg-primary/5 blur-[100px] rounded-full"></div>
+                    <div class="relative z-10 p-12 lg:p-20 bg-background rounded-[3rem] border border-gray-100 shadow-soft group">
+                        <img src="{{ asset('images/logo.png') }}" alt="Sawit Prima Organik Logo" class="w-full h-auto transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                </div>
+
+                <!-- Right: Explanations -->
+                <div data-aos="fade-left">
+                    <span class="text-accent font-black tracking-widest uppercase text-sm">Visual Identity</span>
+                    <h2 class="section-title text-primary mt-4 mb-8">Makna Logo <br>Sawit Prima</h2>
+                    <p class="text-dark/60 text-lg mb-12 leading-relaxed">
+                        Logo Sawit Prima Organik bukan sekadar identitas visual, melainkan representasi dari visi dan komitmen kami dalam memajukan industri perkebunan sawit Indonesia.
+                    </p>
+
+                    <div class="space-y-8">
+                        <div class="flex gap-6 group">
+                            <div class="w-14 h-14 shrink-0 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary text-xl mb-2">Daun Sawit</h4>
+                                <p class="text-dark/50 leading-relaxed">Melambangkan pertumbuhan yang sehat, produktivitas tinggi, dan perkembangan perkebunan yang berkelanjutan.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div class="w-14 h-14 shrink-0 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary text-xl mb-2">Buah Sawit</h4>
+                                <p class="text-dark/50 leading-relaxed">Melambangkan hasil panen yang berkualitas, melimpah, dan memberikan nilai ekonomi yang optimal bagi petani.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div class="w-14 h-14 shrink-0 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary text-xl mb-2">Lengkungan Tanah</h4>
+                                <p class="text-dark/50 leading-relaxed">Melambangkan tanah yang subur, keseimbangan nutrisi, serta fondasi kuat bagi pertumbuhan tanaman sawit.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div class="w-14 h-14 shrink-0 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                                <i class="fas fa-font"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary text-xl mb-2">Tipografi Sawit Prima</h4>
+                                <p class="text-dark/50 leading-relaxed">Mencerminkan kualitas produk yang terpercaya, profesional, modern, dan berorientasi pada hasil.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Product Showcase Spotlight -->
     <section class="section-padding bg-primary text-white overflow-hidden spotlight relative">
         <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent opacity-5"></div>
@@ -134,10 +254,10 @@
                         <!-- Premium Glow Effect -->
                         <div class="absolute inset-0 bg-accent/30 blur-[150px] rounded-full opacity-50"></div>
                         
-                        <img src="{{ asset('images/products/packaging-front.png') }}" alt="Sawit Prima Organik Product" class="relative z-10 w-full max-w-lg mx-auto drop-shadow-[0_50px_50px_rgba(0,0,0,0.5)] float-animation" onerror="this.src='https://placehold.co/600x800/0F4D2E/D8A320?text=Premium+Packaging'">
+                        <img src="{{ asset('images/products/Sawit_Prima_Front.png') }}" alt="Sawit Prima Organik Product" class="relative z-10 w-full max-w-lg mx-auto drop-shadow-[0_50px_50px_rgba(0,0,0,0.6)] float-animation" onerror="this.src='https://placehold.co/600x800/0F4D2E/D8A320?text=Sawit+Prima+Front'">
                         
                         <!-- Floating Badges Small -->
-                        <div class="absolute top-20 -right-4 lg:-right-8 glass-dark p-4 rounded-2xl border border-white/20 shadow-2xl backdrop-blur-xl" data-aos="fade-left" data-aos-delay="500">
+                        <div class="absolute top-20 -right-4 lg:-right-8 z-20 glass-dark p-4 rounded-2xl border border-white/20 shadow-2xl backdrop-blur-xl" data-aos="fade-left" data-aos-delay="500">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-xs">
                                     <i class="fas fa-check"></i>
@@ -149,7 +269,7 @@
                             </div>
                         </div>
                         
-                        <div class="absolute bottom-20 -left-4 lg:-left-8 glass-dark p-4 rounded-2xl border border-white/20 shadow-2xl backdrop-blur-xl" data-aos="fade-right" data-aos-delay="700">
+                        <div class="absolute bottom-20 -left-4 lg:-left-8 z-20 glass-dark p-4 rounded-2xl border border-white/20 shadow-2xl backdrop-blur-xl" data-aos="fade-right" data-aos-delay="700">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-xs">
                                     <i class="fas fa-shield-virus"></i>
@@ -164,7 +284,12 @@
                 </div>
                 
                 <div class="w-full lg:w-1/2" data-aos="fade-left">
-                    <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-accent mb-6">Product Anatomy</div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-accent">Product Anatomy</div>
+                        <div class="inline-block px-4 py-1.5 rounded-full bg-accent/20 border border-accent/30 text-[10px] font-black uppercase tracking-widest text-accent">
+                            NIB: 12062060102849
+                        </div>
+                    </div>
                     <h2 class="section-title text-white mb-8">Kandungan Nutrisi Hayati Terlengkap</h2>
                     <p class="text-white/70 text-lg mb-12 leading-relaxed">
                         Setiap gram Sawit Prima Organik mengandung milyaran mikroba aktif dan mineral organik yang dirancang khusus untuk kebutuhan spesifik kelapa sawit di berbagai fase pertumbuhan.
@@ -306,8 +431,12 @@
                                 "{{ $t->content }}"
                             </blockquote>
                             <div class="flex items-center gap-5 pt-8 border-t border-gray-100">
-                                <div class="w-14 h-14 rounded-2xl bg-primary/10 overflow-hidden shadow-inner flex-shrink-0">
-                                    <img src="{{ isset($t->image) && $t->image ? asset('storage/' . $t->image) : 'https://i.pravatar.cc/150?u=' . $t->id }}" alt="{{ $t->name }}" class="w-full h-full object-cover">
+                                <div class="w-14 h-14 rounded-2xl bg-primary/10 overflow-hidden shadow-inner flex-shrink-0 flex items-center justify-center text-primary text-xl">
+                                    @if(isset($t->image) && $t->image)
+                                        <img src="{{ asset('storage/' . $t->image) }}" alt="{{ $t->name }}" class="w-full h-full object-cover">
+                                    @else
+                                        <i class="fas fa-user"></i>
+                                    @endif
                                 </div>
                                 <div>
                                     <h5 class="font-bold text-primary text-lg leading-tight">{{ $t->name }}</h5>
@@ -334,26 +463,26 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
-                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1542601906970-d4d915a96833?auto=format&fit=crop&q=80&w=800" alt="Aplikasi Pupuk" class="w-full h-full object-cover transition duration-1000 group-hover:scale-110">
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-2xl bg-primary/5 p-8 flex items-center justify-center">
+                    <img src="{{ asset('images/products/Sawit_Prima_Front.png') }}" alt="Aplikasi Pupuk" class="w-full h-auto object-contain transition duration-1000 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-10">
                         <div>
-                            <p class="text-accent font-bold text-xs uppercase tracking-widest mb-2">Aplikasi</p>
-                            <h4 class="text-white font-bold text-xl">Pemupukan TBM</h4>
+                            <p class="text-accent font-bold text-xs uppercase tracking-widest mb-2">Produk Utama</p>
+                            <h4 class="text-white font-bold text-xl">Sawit Prima Front View</h4>
                         </div>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-2xl lg:mt-12">
-                    <img src="https://images.unsplash.com/photo-1516035054744-d474c5209db5?auto=format&fit=crop&q=80&w=800" alt="Panen Sawit" class="w-full h-full object-cover transition duration-1000 group-hover:scale-110">
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-2xl lg:mt-12 bg-primary/5 p-8 flex items-center justify-center">
+                    <img src="{{ asset('images/products/Sawit_Prima_Back.png') }}" alt="Panen Sawit" class="w-full h-auto object-contain transition duration-1000 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-10">
                         <div>
-                            <p class="text-accent font-bold text-xs uppercase tracking-widest mb-2">Harvest</p>
-                            <h4 class="text-white font-bold text-xl">Hasil TBS Maksimal</h4>
+                            <p class="text-accent font-bold text-xs uppercase tracking-widest mb-2">Informasi Teknis</p>
+                            <h4 class="text-white font-bold text-xl">Sawit Prima Back View</h4>
                         </div>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?auto=format&fit=crop&q=80&w=800" alt="Kebun Sawit" class="w-full h-full object-cover transition duration-1000 group-hover:scale-110">
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-2xl bg-primary/5 p-8 flex items-center justify-center">
+                    <img src="{{ asset('images/products/Sawit_Prima_Front.png') }}" alt="Kebun Sawit" class="w-full h-auto object-contain transition duration-1000 group-hover:scale-110 blur-[1px] group-hover:blur-0">
                     <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-10">
                         <div>
                             <p class="text-accent font-bold text-xs uppercase tracking-widest mb-2">Plantation</p>
@@ -381,20 +510,44 @@
                 <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[100px] -ml-40 -mb-40"></div>
                 <div class="absolute inset-0 opacity-10 bg-pattern"></div>
 
-                <div class="relative z-10 max-w-4xl mx-auto text-center" data-aos="zoom-in">
-                    <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-accent mb-8">Ready to Boost Your Yield?</div>
-                    <h2 class="text-4xl md:text-6xl font-heading font-black text-white mb-10 leading-[1.1]">
-                        Siap Bergabung dengan Ribuan Petani <span class="text-gradient-gold">Sukses</span>?
-                    </h2>
-                    <p class="text-xl text-white/70 mb-14 leading-relaxed max-w-2xl mx-auto">
-                        Dapatkan penawaran harga spesial untuk pembelian partai besar dan konsultasi program pemupukan gratis bersama ahli agronomis kami.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row justify-center items-center gap-8">
-                        <a href="https://wa.me/628123456789" target="_blank" class="w-full sm:w-auto bg-white text-primary px-12 py-6 rounded-2xl text-xl font-black shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-4">
-                            <i class="fab fa-whatsapp text-2xl"></i> Hubungi via WhatsApp
-                        </a>
-                        <a href="{{ route('contact') }}" class="text-white font-bold border-b-2 border-accent hover:text-accent transition-colors duration-300">Jadwalkan Konsultasi</a>
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" data-aos="zoom-in">
+                    <div class="text-center lg:text-left">
+                        <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-accent mb-8">Ready to Boost Your Yield?</div>
+                        <h2 class="text-4xl md:text-6xl font-heading font-black text-white mb-10 leading-[1.1]">
+                            Siap Bergabung dengan Ribuan Petani <span class="text-gradient-gold">Sukses</span>?
+                        </h2>
+                        <p class="text-xl text-white/70 mb-14 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            Dapatkan penawaran harga spesial untuk pembelian partai besar dan konsultasi program pemupukan gratis bersama ahli agronomis kami.
+                        </p>
+
+                        <!-- Trust Elements -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-8 mb-16">
+                            <div class="flex items-center gap-3 text-white/90 font-bold">
+                                <i class="fas fa-check-circle text-accent text-xl"></i>
+                                <span>Organik Premium</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-white/90 font-bold">
+                                <i class="fas fa-check-circle text-accent text-xl"></i>
+                                <span>Asam Humat</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-white/90 font-bold">
+                                <i class="fas fa-check-circle text-accent text-xl"></i>
+                                <span>Mikoriza Aktif</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-8">
+                            <a href="https://wa.me/628123456789" target="_blank" class="w-full sm:w-auto bg-white text-primary px-12 py-6 rounded-2xl text-xl font-black shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-4">
+                                <i class="fab fa-whatsapp text-2xl"></i> WhatsApp
+                            </a>
+                            <a href="{{ route('contact') }}" class="text-white font-bold border-b-2 border-accent hover:text-accent transition-colors duration-300">Konsultasi Gratis</a>
+                        </div>
+                    </div>
+
+                    <!-- CTA Product Image -->
+                    <div class="hidden lg:block relative">
+                        <div class="absolute inset-0 bg-accent/20 blur-[100px] rounded-full"></div>
+                        <img src="{{ asset('images/products/Sawit_Prima_Front.png') }}" alt="Sawit Prima Organik Pack" class="relative z-10 w-full max-w-[350px] mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] rotate-6 group-hover:rotate-0 transition-transform duration-700">
                     </div>
                 </div>
             </div>

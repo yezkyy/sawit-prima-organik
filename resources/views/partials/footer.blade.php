@@ -7,17 +7,16 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-24 mb-24">
             <!-- Brand Column -->
             <div class="lg:col-span-1">
-                <a href="{{ route('home') }}" class="inline-flex items-center gap-3 mb-8 group">
-                    <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center transition-transform group-hover:rotate-12">
-                        <i class="fas fa-leaf text-white"></i>
-                    </div>
-                    <span class="font-heading text-2xl font-black tracking-tighter text-white">
-                        SAWIT PRIMA <span class="text-accent">ORGANIK</span>
-                    </span>
+                <a href="{{ route('home') }}" class="inline-flex items-center mb-8 group">
+                    <img src="{{ asset('images/logo.png') }}" alt="Sawit Prima Organik" class="h-20 w-auto transition-transform group-hover:scale-105">
                 </a>
-                <p class="text-white/50 leading-relaxed mb-10 text-lg">
+                <p class="text-white/50 leading-relaxed mb-6 text-lg">
                     Pelopor teknologi pupuk hayati premium untuk masa depan perkebunan kelapa sawit Indonesia yang lebih produktif dan berkelanjutan.
                 </p>
+                <div class="mb-10 p-4 rounded-xl bg-white/5 border border-white/10 inline-block">
+                    <p class="text-xs font-bold uppercase tracking-widest text-accent mb-1">NIB Resmi</p>
+                    <p class="text-white font-mono text-sm">12062060102849</p>
+                </div>
                 <div class="flex gap-4">
                     <a href="#" class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 border border-white/10 hover:border-primary"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 border border-white/10 hover:border-primary"><i class="fab fa-instagram"></i></a>
@@ -64,7 +63,7 @@
                         <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
                             <i class="fas fa-map-marker-alt text-accent text-sm"></i>
                         </div>
-                        <p class="text-white/60 text-sm leading-relaxed">Jl. Perkebunan Nusantara No. 88,<br>Pekanbaru, Riau, Indonesia</p>
+                        <p class="text-white/60 text-sm leading-relaxed">Pekanbaru - Riau<br>Indonesia</p>
                     </div>
                     <div class="flex gap-5">
                         <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10">

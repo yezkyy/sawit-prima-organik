@@ -11,7 +11,7 @@
     <div class="max-w-md w-full bg-white rounded-4xl shadow-2xl overflow-hidden">
         <div class="p-10">
             <div class="text-center mb-10">
-                <h1 class="font-heading text-2xl font-bold text-primary tracking-tight mb-2">SAWIT PRIMA <span class="text-accent">ORGANIK</span></h1>
+                <img src="{{ asset('images/logo.png') }}" alt="Sawit Prima Organik" class="h-24 w-auto mx-auto mb-6">
                 <p class="text-dark/50 text-sm font-medium">Masuk ke Panel Administrasi</p>
             </div>
 

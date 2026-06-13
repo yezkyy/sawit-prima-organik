@@ -81,8 +81,12 @@
                             "{{ $t->content }}"
                         </blockquote>
                         <div class="flex items-center gap-5 pt-8 border-t border-gray-100">
-                            <div class="w-14 h-14 rounded-2xl bg-primary/10 overflow-hidden shadow-inner flex-shrink-0">
-                                <img src="{{ isset($t->image) && $t->image ? asset('storage/' . $t->image) : 'https://i.pravatar.cc/150?u=' . $t->id }}" alt="{{ $t->name }}" class="w-full h-full object-cover">
+                            <div class="w-14 h-14 rounded-2xl bg-primary/10 overflow-hidden shadow-inner flex-shrink-0 flex items-center justify-center text-primary text-xl">
+                                @if(isset($t->image) && $t->image)
+                                    <img src="{{ asset('storage/' . $t->image) }}" alt="{{ $t->name }}" class="w-full h-full object-cover">
+                                @else
+                                    <i class="fas fa-user"></i>
+                                @endif
                             </div>
                             <div>
                                 <h5 class="font-bold text-primary text-lg leading-tight">{{ $t->name }}</h5>

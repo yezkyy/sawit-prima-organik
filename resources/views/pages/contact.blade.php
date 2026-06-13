@@ -33,7 +33,7 @@
                             </div>
                             <div>
                                 <h5 class="font-bold text-xl text-primary mb-2">Kantor Pusat</h5>
-                                <p class="text-gray-500 leading-relaxed">Jl. Perkebunan Nusantara No. 88,<br>Pekanbaru, Riau, Indonesia</p>
+                                <p class="text-gray-500 leading-relaxed">Pekanbaru - Riau<br>Indonesia</p>
                             </div>
                         </div>
                         <div class="flex gap-6 group">

@@ -9,13 +9,8 @@ class="fixed top-0 w-full z-[100] transition-all duration-500 flex items-center"
         <div class="flex items-center justify-between">
             <!-- Logo -->
             <div class="flex-shrink-0">
-                <a href="{{ route('home') }}" class="group flex items-center gap-3">
-                    <div :class="scrolled ? 'bg-primary' : 'bg-white'" class="w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-500">
-                        <i class="fas fa-leaf transition-colors duration-500" :class="scrolled ? 'text-white' : 'text-primary'"></i>
-                    </div>
-                    <span class="font-heading text-xl lg:text-2xl font-black tracking-tighter" :class="scrolled ? 'text-primary' : 'text-white'">
-                        SAWIT PRIMA <span class="text-accent">ORGANIK</span>
-                    </span>
+                <a href="{{ route('home') }}" class="group flex items-center">
+                    <img src="{{ asset('images/logo.png') }}" alt="Sawit Prima Organik" :class="scrolled ? 'h-14' : 'h-16'" class="w-auto transition-all duration-500 drop-shadow-sm">
                 </a>
             </div>
 
