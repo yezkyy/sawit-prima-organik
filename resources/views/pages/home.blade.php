@@ -753,55 +753,29 @@
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Initialize Swiper for Banners
+        const bannerSlides =
+            document.querySelectorAll('.banner-swiper .swiper-slide').length;
+
         new Swiper('.banner-swiper', {
             slidesPerView: 1,
-            loop: true,
+
+            loop: bannerSlides > 1,
+
             autoplay: {
                 delay: 6000,
                 disableOnInteraction: false,
             },
+
             pagination: {
                 el: '.swiper-pagination-banner',
                 clickable: true,
             },
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true
-            }
-        });
-
-        // Initialize Swiper for Testimonials
-        new Swiper('.testimonial-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination-test',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-next-test',
-                prevEl: '.swiper-prev-test',
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-            }
         });
 
         // Initialize CountUp for Hero and Stats
         document.querySelectorAll('[data-count]').forEach((el) => {
             const count = parseInt(el.getAttribute('data-count'));
-            const counter = new countUp.CountUp(el, count, {
+            const counter = new CountUp(el, count, {
                 duration: 2.5,
                 useEasing: true,
                 useGrouping: true,
