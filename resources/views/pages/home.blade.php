@@ -748,4 +748,4 @@
             </div>
         </div>
     </section>
-@endsectionndsection
+@endsection
