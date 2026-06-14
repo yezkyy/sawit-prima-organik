@@ -1,6 +1,9 @@
 import './bootstrap';
 
 import Alpine from 'alpinejs';
+import collapse from '@alpinejs/collapse';
+Alpine.plugin(collapse);
+
 window.Alpine = Alpine;
 Alpine.start();
 
@@ -25,6 +28,8 @@ import 'aos/dist/aos.css';
 |--------------------------------------------------------------------------
 */
 import Swiper from 'swiper';
+window.Swiper = Swiper;
+
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
@@ -114,17 +119,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const testimonialSlider = document.querySelector('.testimonial-swiper');
 
     if (testimonialSlider) {
+
+        const slideCount =
+            testimonialSlider.querySelectorAll('.swiper-slide').length;
+
         new Swiper('.testimonial-swiper', {
             modules: [Navigation, Pagination, Autoplay],
-            loop: true,
+
+            loop: slideCount > 3,
+
             autoplay: {
                 delay: 5000,
+                disableOnInteraction: false,
             },
+
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
+
     }
 
 });

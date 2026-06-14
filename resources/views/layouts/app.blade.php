@@ -24,7 +24,21 @@
     <link rel="icon" type="image/png" href="{{ !empty($site_settings['site_logo']) ? asset('storage/' . $site_settings['site_logo']) : asset('images/logo.png') }}">
 
     <title>@yield('title', $site_settings['meta_title'] ?? 'Sawit Prima Organik')</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @php
+        $isProduction = app()->environment('production');
+        $manifestPath = $isProduction ? '../public_html/build/manifest.json' : public_path('build/manifest.json');
+    @endphp
+    
+    @if ($isProduction && file_exists($manifestPath))
+    @php
+        $manifest = json_decode(file_get_contents($manifestPath), true);
+    @endphp
+        <link rel="stylesheet" href="{{ config('app.url') }}/build/{{ $manifest['resources/css/app.css']['file'] }}">
+        <script type="module" src="{{ config('app.url') }}/build/{{ $manifest['resources/js/app.js']['file'] }}"></script>
+    @else
+        @viteReactRefresh
+        @vite(['resources/js/app.js', 'resources/css/app.css'])
+    @endif
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     @stack('styles')
