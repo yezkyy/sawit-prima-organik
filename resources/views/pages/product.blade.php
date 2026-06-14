@@ -30,7 +30,7 @@
                         <div class="absolute inset-0 bg-primary/5 rounded-[3rem] -rotate-3 scale-105 group-hover:rotate-0 transition duration-700"></div>
                         <div class="relative bg-background rounded-[3rem] p-8 md:p-12 shadow-2xl overflow-hidden border border-gray-100 flex flex-col md:flex-row gap-8 items-center justify-center">
                             <div class="relative text-center group/item">
-                                <img src="{{ asset('images/products/Sawit_Prima_Front.png') }}" alt="Kemasan Depan Sawit Prima" class="w-full max-w-[320px] mx-auto float-animation drop-shadow-2xl hover:scale-110 transition-transform duration-500 cursor-zoom-in">
+                                <img src="{{ asset('images/products/Sawit_Prima_Front.png') }}" alt="Kemasan Depan Sawit Prima" class="w-full max-w-[320px] mx-auto float-animation drop-shadow-2xl hover:scale-110 transition-transform duration-500 cursor-zoom-in" loading="lazy">
                                 <p class="mt-6 text-[10px] font-black uppercase tracking-widest text-primary/40">Kemasan Depan</p>
 
                                 <!-- Floating Badges -->
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <div class="relative text-center group/item">
-                                <img src="{{ asset('images/products/Sawit_Prima_Back.png') }}" alt="Kemasan Belakang Sawit Prima" class="w-full max-w-[320px] mx-auto float-animation drop-shadow-2xl hover:scale-110 transition-transform duration-500 cursor-zoom-in" style="animation-delay: 2s">
+                                <img src="{{ asset('images/products/Sawit_Prima_Back.png') }}" alt="Kemasan Belakang Sawit Prima" class="w-full max-w-[320px] mx-auto float-animation drop-shadow-2xl hover:scale-110 transition-transform duration-500 cursor-zoom-in" style="animation-delay: 2s" loading="lazy">
                                 <p class="mt-6 text-[10px] font-black uppercase tracking-widest text-primary/40">Informasi Kandungan</p>
                             </div>
                         </div>

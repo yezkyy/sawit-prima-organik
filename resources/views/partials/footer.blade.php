@@ -8,7 +8,7 @@
             <!-- Brand Column -->
             <div class="lg:col-span-1">
                 <a href="{{ route('home') }}" class="inline-flex items-center mb-8 group">
-                    <img src="{{ !empty($site_settings['site_logo']) ? asset('storage/' . $site_settings['site_logo']) : asset('images/logo.png') }}" alt="{{ $site_settings['site_name'] ?? 'Sawit Prima Organik' }}" class="h-20 w-auto transition-transform group-hover:scale-105">
+                    <img src="{{ !empty($site_settings['site_logo']) ? asset('storage/' . $site_settings['site_logo']) : asset('images/logo.png') }}" alt="{{ $site_settings['site_name'] ?? 'Sawit Prima Organik' }}" class="h-20 w-auto transition-transform group-hover:scale-105" loading="lazy">
                 </a>
                 <p class="text-white/50 leading-relaxed mb-6 text-lg">
                     {{ $site_settings['site_description'] ?? 'Pelopor teknologi pupuk hayati premium untuk masa depan perkebunan kelapa sawit Indonesia yang lebih produktif dan berkelanjutan.' }}

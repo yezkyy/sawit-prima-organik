@@ -28,13 +28,15 @@ import 'aos/dist/aos.css';
 |--------------------------------------------------------------------------
 */
 import Swiper from 'swiper';
-window.Swiper = Swiper;
-
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+
+// Register modules globally
+Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
+window.Swiper = Swiper;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +45,7 @@ import 'swiper/css/pagination';
 */
 import { Fancybox } from '@fancyapps/ui';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
+window.Fancybox = Fancybox;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +61,7 @@ import 'lenis/dist/lenis.css';
 |--------------------------------------------------------------------------
 */
 import gsap from 'gsap';
+window.gsap = gsap;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +69,7 @@ import gsap from 'gsap';
 |--------------------------------------------------------------------------
 */
 import Typed from 'typed.js';
+window.Typed = Typed;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,93 +77,117 @@ import Typed from 'typed.js';
 |--------------------------------------------------------------------------
 */
 import { CountUp } from 'countup.js';
+window.CountUp = CountUp;
 
 /*
 |--------------------------------------------------------------------------
-| AOS Init
+| INITIALIZATIONS
 |--------------------------------------------------------------------------
 */
-AOS.init({
-    once: true,
-    duration: 1000,
-    easing: 'ease-out-cubic',
-    offset: 80,
-});
 
-/*
-|--------------------------------------------------------------------------
-| Fancybox Init
-|--------------------------------------------------------------------------
-*/
-Fancybox.bind('[data-fancybox]', {});
-
-/*
-|--------------------------------------------------------------------------
-| Lenis Init
-|--------------------------------------------------------------------------
-*/
-const lenis = new Lenis({
-    duration: 1.2,
-    smoothWheel: true,
-});
-
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
-
-/*
-|--------------------------------------------------------------------------
-| Swiper Global Init
-|--------------------------------------------------------------------------
-*/
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. AOS Init
+    AOS.init({
+        once: true,
+        duration: 1000,
+        easing: 'ease-out-cubic',
+        offset: 80,
+    });
 
-    const testimonialSlider = document.querySelector('.testimonial-swiper');
+    // 2. Fancybox Init
+    Fancybox.bind('[data-fancybox]', {});
 
-    if (testimonialSlider) {
+    // 3. Lenis Init
+    const lenisElement = document.querySelector('[data-lenis-prevent]') || window;
+    const lenis = new Lenis({
+        duration: 1.2,
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 2,
+        infinite: false,
+    });
 
-        const slideCount =
-            testimonialSlider.querySelectorAll('.swiper-slide').length;
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // 4. Swiper: Banner
+    const bannerSwiper = document.querySelector('.banner-swiper');
+    if (bannerSwiper) {
+        const slideCount = bannerSwiper.querySelectorAll('.swiper-slide').length;
+        new Swiper('.banner-swiper', {
+            slidesPerView: 1,
+            loop: slideCount > 1,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination-banner',
+                clickable: true,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+        });
+    }
+
+    // 5. Swiper: Testimonial
+    const testimonialSwiper = document.querySelector('.testimonial-swiper');
+    if (testimonialSwiper) {
+        const slides = testimonialSwiper.querySelectorAll('.swiper-slide');
+        const slideCount = slides.length;
+        
+        // Hide navigation/pagination if not enough slides
+        if (slideCount <= 1) {
+            const nextBtn = document.querySelector('.swiper-next-test');
+            const prevBtn = document.querySelector('.swiper-prev-test');
+            const pagination = document.querySelector('.swiper-pagination-test');
+            if (nextBtn) nextBtn.style.display = 'none';
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (pagination) pagination.style.display = 'none';
+        }
 
         new Swiper('.testimonial-swiper', {
-            modules: [Navigation, Pagination, Autoplay],
-
+            slidesPerView: 1,
+            spaceBetween: 30,
             loop: slideCount > 3,
-
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
             },
-
             pagination: {
-                el: '.swiper-pagination',
+                el: '.swiper-pagination-test',
                 clickable: true,
             },
-
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-next-test',
+                prevEl: '.swiper-prev-test',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                    loop: slideCount > 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    loop: slideCount > 3,
+                },
             },
         });
-
     }
 
-});
-
-/*
-|--------------------------------------------------------------------------
-| Typed Hero Text
-|--------------------------------------------------------------------------
-*/
-document.addEventListener('DOMContentLoaded', () => {
-
+    // 6. Typed JS
     const typedTarget = document.querySelector('#typed-text');
-
     if (typedTarget) {
-
         new Typed('#typed-text', {
             strings: [
                 'Meningkatkan Produktivitas Sawit',
@@ -171,75 +200,75 @@ document.addEventListener('DOMContentLoaded', () => {
             backDelay: 2500,
             loop: true,
         });
-
     }
 
-});
+    // 7. CountUp
+    const initCounters = () => {
+        document.querySelectorAll('[data-count]').forEach((item) => {
+            if (item.classList.contains('counted')) return;
 
-/*
-|--------------------------------------------------------------------------
-| Count Up
-|--------------------------------------------------------------------------
-*/
-document.addEventListener('DOMContentLoaded', () => {
+            const value = parseFloat(item.dataset.count);
+            const duration = parseFloat(item.dataset.duration) || 2.5;
 
-    document.querySelectorAll('[data-count]').forEach((item) => {
+            const counter = new CountUp(item, value, {
+                duration: duration,
+                useEasing: true,
+                useGrouping: true,
+            });
 
-        const value = item.dataset.count;
-
-        const counter = new CountUp(item, value, {
-            duration: 3,
+            if (!counter.error) {
+                // Trigger when visible using Intersection Observer if not using AOS events
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            counter.start();
+                            item.classList.add('counted');
+                            observer.unobserve(item);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(item);
+            } else {
+                console.error(counter.error);
+                item.innerHTML = value;
+            }
         });
+    };
+    initCounters();
 
-        if (!counter.error) {
-            counter.start();
-        }
-
-    });
-
-});
-
-/*
-|--------------------------------------------------------------------------
-| GSAP Animations
-|--------------------------------------------------------------------------
-*/
-document.addEventListener('DOMContentLoaded', () => {
-
+    // 8. GSAP Animations
     const heroTitle = document.querySelector('.hero-title');
     const heroContent = document.querySelector('.hero-content');
     const heroImage = document.querySelector('.hero-image');
 
     if (heroTitle) {
-
         gsap.from(heroTitle, {
             y: 80,
             opacity: 0,
             duration: 1,
+            ease: 'power3.out'
         });
-
     }
 
     if (heroContent) {
-
         gsap.from(heroContent, {
             y: 50,
             opacity: 0,
             delay: .2,
             duration: 1,
+            ease: 'power3.out'
         });
-
     }
 
     if (heroImage) {
-
         gsap.from(heroImage, {
             x: 100,
             opacity: 0,
             delay: .3,
             duration: 1.2,
+            ease: 'power3.out'
         });
-
     }
 
 });

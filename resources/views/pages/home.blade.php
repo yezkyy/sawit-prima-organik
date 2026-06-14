@@ -42,7 +42,7 @@
                                 <div class="relative order-1 lg:order-2" data-aos="fade-left">
                                     <div class="relative z-10 hero-image">
                                         <div class="absolute inset-0 bg-accent/20 blur-[150px] rounded-full"></div>
-                                        <img src="{{ asset('storage/' . $banner->image) }}" alt="{{ $banner->title }}" class="relative z-10 w-full max-w-[500px] mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] float-animation rounded-[2rem] object-cover aspect-video">
+                                        <img src="{{ asset('storage/' . $banner->image) }}" alt="{{ $banner->title }}" class="relative z-10 w-full max-w-[500px] mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] float-animation rounded-[2rem] object-cover aspect-video" fetchpriority="high">
                                     </div>
                                 </div>
                             </div>
@@ -748,48 +748,4 @@
             </div>
         </div>
     </section>
-@endsection
-
-@push('scripts')
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const bannerSlides =
-            document.querySelectorAll('.banner-swiper .swiper-slide').length;
-
-        new Swiper('.banner-swiper', {
-            slidesPerView: 1,
-
-            loop: bannerSlides > 1,
-
-            autoplay: {
-                delay: 6000,
-                disableOnInteraction: false,
-            },
-
-            pagination: {
-                el: '.swiper-pagination-banner',
-                clickable: true,
-            },
-        });
-
-        // Initialize CountUp for Hero and Stats
-        document.querySelectorAll('[data-count]').forEach((el) => {
-            const count = parseInt(el.getAttribute('data-count'));
-            const counter = new CountUp(el, count, {
-                duration: 2.5,
-                useEasing: true,
-                useGrouping: true,
-            });
-            
-            if (!counter.error) {
-                // Using AOS to trigger counter when visible
-                el.addEventListener('aos:in', () => {
-                    counter.start();
-                });
-            } else {
-                console.error(counter.error);
-            }
-        });
-    });
-</script>
-@endpush
+@endsectionndsection
