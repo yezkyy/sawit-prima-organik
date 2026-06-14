@@ -23,54 +23,7 @@
     <section class="section-padding bg-background">
         <div class="container-custom">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
-                @php
-                    $displayTestimonials = $testimonials->count() > 0 ? $testimonials : collect([
-                        (object)[
-                            'id' => 1,
-                            'name' => 'H. Ahmad Subarjo',
-                            'location' => 'Riau, Pekanbaru',
-                            'content' => 'Setelah pakai Sawit Prima Organik, hasil panen saya naik dari 1.8 ton jadi 2.4 ton per hektar. Berat janjangannya benar-benar terasa bedanya.',
-                            'image' => null
-                        ],
-                        (object)[
-                            'id' => 2,
-                            'name' => 'Bpk. Nyoman Weda',
-                            'location' => 'Kalimantan Barat',
-                            'content' => 'Tanah yang dulunya keras sekarang jadi lebih gembur. Akar sawit jadi lebih sehat dan buah tidak gampang trek di musim kemarau.',
-                            'image' => null
-                        ],
-                        (object)[
-                            'id' => 3,
-                            'name' => 'Ibu Siti Aminah',
-                            'location' => 'Sumatera Selatan',
-                            'content' => 'Sangat praktis aplikasinya. Campuran dengan kimia juga aman, malah jadi lebih hemat biaya pupuk keseluruhan sampai 30%.',
-                            'image' => null
-                        ],
-                        (object)[
-                            'id' => 4,
-                            'name' => 'Bpk. Sugeng Waluyo',
-                            'location' => 'Lampung Tengah',
-                            'content' => 'Rendemen naik signifikan. Biasanya PKS kasih potongan banyak karena buah kecil, sekarang TBS saya selalu masuk kelas premium.',
-                            'image' => null
-                        ],
-                        (object)[
-                            'id' => 5,
-                            'name' => 'H. Ismail Hasan',
-                            'location' => 'Jambi',
-                            'content' => 'Saya sudah coba berbagai merk, tapi cuma Sawit Prima yang konsisten hasilnya. Pohon yang hampir mati pun bisa pulih kembali daunnya.',
-                            'image' => null
-                        ],
-                        (object)[
-                            'id' => 6,
-                            'name' => 'Bpk. Aris Munandar',
-                            'location' => 'Sumatera Utara',
-                            'content' => 'Luar biasa responnya. Padahal baru aplikasi 3 bulan, tapi pelepah sawit sudah mulai membuka dan hijau segar.',
-                            'image' => null
-                        ]
-                    ]);
-                @endphp
-
-                @foreach($displayTestimonials as $t)
+                @forelse($testimonials as $t)
                     <div class="bg-white p-10 rounded-[2rem] shadow-soft border border-gray-100 hover:border-primary/20 transition-all duration-500 flex flex-col">
                         <div class="flex text-accent gap-1 mb-8">
                             @for($i=0; $i<5; $i++)
@@ -94,7 +47,15 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="col-span-1 md:col-span-2 lg:col-span-3 flex flex-col items-center justify-center py-24 px-4 bg-white rounded-[2rem] shadow-sm border border-gray-100">
+                        <div class="w-24 h-24 bg-primary/5 rounded-full flex items-center justify-center text-primary text-4xl mb-6">
+                            <i class="fa-regular fa-comments"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-primary mb-2 text-center">Belum Ada Testimoni</h4>
+                        <p class="text-gray-500 text-center max-w-md">Kisah sukses dari mitra petani kami akan ditampilkan di sini. Jadilah bagian dari mereka!</p>
+                    </div>
+                @endforelse
             </div>
             
             @if($testimonials->count() > 0)

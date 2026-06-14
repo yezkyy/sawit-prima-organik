@@ -54,59 +54,191 @@
                             NIB: 12062060102849
                         </div>
                     </div>
-                    <h2 class="section-title text-primary mt-4 mb-8">Sawit Prima Organik <br> <span class="text-accent text-3xl md:text-4xl italic">Sistem Nutrisi Lengkap</span></h2>
+                    <h2 class="section-title text-primary mt-4 mb-8">Sawit Prima Organik <br> <span class="text-accent text-3xl md:text-4xl italic">Pupuk Organik Premium</span></h2>
 
                     <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                        Bukan sekadar penambah hara, Sawit Prima Organik bekerja sebagai **Pembenah Tanah** dan **Biostimulan**. Produk ini mengaktifkan kembali mikroba tanah yang tertidur dan memperbaiki pH tanah secara alami.
+                        Sawit Prima Organik adalah pupuk organik premium yang dirancang khusus untuk meningkatkan produktivitas kelapa sawit. Menggabungkan teknologi bio-nutrisi, asam humat, dan mikroba aktif untuk hasil panen maksimal.
                     </p>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
                         <div class="flex gap-4 group">
                             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <i class="fas fa-microscope text-xl"></i>
+                                <i class="fas fa-box text-xl"></i>
                             </div>
                             <div>
-                                <h5 class="font-bold text-primary mb-1 text-lg">Formula Bio-Tek</h5>
-                                <p class="text-sm text-gray-500">Mengandung Konsorsium 7 Mikroba Unggul.</p>
+                                <h5 class="font-bold text-primary mb-1 text-lg">Kemasan Karung</h5>
+                                <p class="text-sm text-gray-500">1 Karung isi 30 Pcs (Total 60 Kg).</p>
                             </div>
                         </div>
                         <div class="flex gap-4 group">
                             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <i class="fas fa-leaf text-xl"></i>
+                                <i class="fas fa-weight text-xl"></i>
                             </div>
                             <div>
-                                <h5 class="font-bold text-primary mb-1 text-lg">100% Organik</h5>
-                                <p class="text-sm text-gray-500">Murni alami tanpa bahan kimia berbahaya.</p>
+                                <h5 class="font-bold text-primary mb-1 text-lg">Berat per Pcs</h5>
+                                <p class="text-sm text-gray-500">Setiap pcs memiliki berat 2 Kg.</p>
                             </div>
                         </div>
                         <div class="flex gap-4 group">
                             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <i class="fas fa-bolt text-xl"></i>
+                                <i class="fas fa-map-marked-alt text-xl"></i>
                             </div>
                             <div>
-                                <h5 class="font-bold text-primary mb-1 text-lg">Reaksi Cepat</h5>
-                                <p class="text-sm text-gray-500">Nutrisi langsung terserap dalam 72 jam.</p>
+                                <h5 class="font-bold text-primary mb-1 text-lg">Cakupan Lahan</h5>
+                                <p class="text-sm text-gray-500">1 Karung untuk ± 2 Hektar lahan.</p>
                             </div>
                         </div>
                         <div class="flex gap-4 group">
                             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <i class="fas fa-globe-asia text-xl"></i>
+                                <i class="fas fa-tree text-xl"></i>
                             </div>
                             <div>
-                                <h5 class="font-bold text-primary mb-1 text-lg">Ramah Lingkungan</h5>
-                                <p class="text-sm text-gray-500">Mendukung sertifikasi ISPO & RSPO.</p>
+                                <h5 class="font-bold text-primary mb-1 text-lg">Kapasitas Pokok</h5>
+                                <p class="text-sm text-gray-500">1 Pcs (2 Kg) untuk ± 8 pokok sawit.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="flex flex-wrap gap-4">
-                        <a href="https://wa.me/628123456789" class="btn-primary flex-1 sm:flex-none justify-center py-5 px-12 text-lg font-bold">
-                            Pesan Sekarang <i class="fab fa-whatsapp ml-2 text-xl"></i>
+                        <a href="https://wa.me/{{ $site_settings['contact_whatsapp'] ?? '6281373493884' }}" class="btn-primary flex-1 sm:flex-none justify-center py-5 px-12 text-lg font-bold">
+                            Konsultasi Pembelian <i class="fab fa-whatsapp ml-2 text-xl"></i>
                         </a>
                         <div class="flex items-center gap-3 px-6 py-4 bg-gray-50 rounded-2xl border border-gray-100">
                             <i class="fas fa-shield-alt text-primary"></i>
-                            <span class="text-xs font-bold text-primary tracking-tighter uppercase">Legal & Terdaftar</span>
+                            <span class="text-xs font-bold text-primary tracking-tighter uppercase">Tersedia Program Kredit</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rekomendasi Pemakaian Section -->
+    <section class="section-padding bg-background relative overflow-hidden">
+        <div class="container-custom relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <span class="text-primary font-black tracking-widest uppercase text-sm">Panduan Aplikasi</span>
+                <h2 class="section-title text-primary mt-4">Rekomendasi Pemakaian</h2>
+                <div class="w-20 h-1.5 bg-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                <!-- 1 Pcs Info -->
+                <div class="bg-white p-10 rounded-[3rem] shadow-soft border border-gray-100 flex flex-col md:flex-row gap-8 items-center group hover:border-primary/20 transition-all duration-500" data-aos="fade-right">
+                    <div class="w-32 h-32 shrink-0 bg-primary/5 rounded-[2rem] flex items-center justify-center text-primary text-5xl group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-black text-primary mb-4">Kemasan Satuan (Pcs)</h4>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Setiap kemasan satuan Sawit Prima Organik memiliki berat bersih <span class="font-bold text-primary">2 Kg</span>. Diformulasikan secara presisi untuk mencukupi kebutuhan nutrisi sekitar <span class="font-bold text-primary">8 pokok</span> kelapa sawit dewasa.
+                        </p>
+                        <div class="flex items-center gap-4 text-sm font-bold text-primary/60">
+                            <span class="px-4 py-2 bg-primary/5 rounded-lg">2 Kg / Pcs</span>
+                            <span class="px-4 py-2 bg-primary/5 rounded-lg">± 8 Pokok Sawit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1 Karung Info -->
+                <div class="bg-white p-10 rounded-[3rem] shadow-soft border border-gray-100 flex flex-col md:flex-row gap-8 items-center group hover:border-primary/20 transition-all duration-500" data-aos="fade-left">
+                    <div class="w-32 h-32 shrink-0 bg-accent/10 rounded-[2rem] flex items-center justify-center text-accent text-5xl group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-black text-primary mb-4">Kemasan Karung (Bag)</h4>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Satu karung berisi <span class="font-bold text-primary">30 pcs</span> (Total <span class="font-bold text-primary">60 Kg</span>). Kapasitas ini dirancang untuk memenuhi kebutuhan pemupukan lahan seluas <span class="font-bold text-primary">± 2 Hektar</span> dengan efisiensi maksimal.
+                        </p>
+                        <div class="flex items-center gap-4 text-sm font-bold text-primary/60">
+                            <span class="px-4 py-2 bg-accent/5 rounded-lg text-accent">60 Kg / Karung</span>
+                            <span class="px-4 py-2 bg-accent/5 rounded-lg text-accent">± 2 Hektar Lahan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilihan Pembelian Section -->
+    <section class="section-padding bg-white relative overflow-hidden">
+        <div class="container-custom">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <span class="text-primary font-black tracking-widest uppercase text-sm">Purchase Options</span>
+                <h2 class="section-title text-primary mt-4">Pilihan Pembelian</h2>
+                <div class="w-20 h-1.5 bg-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Pembelian Tunai -->
+                <div class="relative group" data-aos="fade-right">
+                    <div class="absolute inset-0 bg-primary/5 rounded-[3.5rem] rotate-3 transition-transform duration-500 group-hover:rotate-0"></div>
+                    <div class="relative bg-white p-10 lg:p-14 rounded-[3.5rem] border border-gray-100 shadow-xl overflow-hidden flex flex-col h-full">
+                        <div class="mb-8">
+                            <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-widest">Pembelian Tunai</span>
+                        </div>
+                        <h4 class="text-3xl font-black text-primary mb-2">Harga Tunai</h4>
+                        <div class="flex items-baseline gap-2 mb-8">
+                            <span class="text-sm font-bold text-gray-400">Mulai</span>
+                            <span class="text-4xl font-black text-primary">Rp 2.000.000</span>
+                            <span class="text-sm font-bold text-gray-400">/ Karung</span>
+                        </div>
+                        
+                        <ul class="space-y-5 mb-12 flex-grow">
+                            <li class="flex items-center gap-4 text-gray-600">
+                                <i class="fas fa-check-circle text-primary"></i>
+                                <span>Isi 30 pcs (Total 60 Kg)</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-gray-600">
+                                <i class="fas fa-check-circle text-primary"></i>
+                                <span>Estimasi untuk ± 2 Hektar</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-gray-600">
+                                <i class="fas fa-check-circle text-primary"></i>
+                                <span>Pembayaran Langsung</span>
+                            </li>
+                        </ul>
+
+                        <a href="https://wa.me/{{ $site_settings['contact_whatsapp'] ?? '6281373493884' }}" class="btn-primary w-full justify-center py-5 rounded-2xl font-bold">
+                            Pesan Tunai Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pembelian Kredit -->
+                <div class="relative group" data-aos="fade-left">
+                    <div class="absolute inset-0 bg-accent/10 rounded-[3.5rem] -rotate-3 transition-transform duration-500 group-hover:rotate-0"></div>
+                    <div class="relative bg-white p-10 lg:p-14 rounded-[3.5rem] border border-gray-100 shadow-xl overflow-hidden flex flex-col h-full">
+                        <div class="absolute top-8 right-8">
+                            <span class="px-4 py-1.5 rounded-full bg-accent text-white text-[10px] font-black uppercase tracking-widest shadow-lg animate-pulse">Program Kredit Tersedia</span>
+                        </div>
+                        <div class="mb-8">
+                            <span class="px-4 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-black uppercase tracking-widest">Pembelian Kredit</span>
+                        </div>
+                        <h4 class="text-3xl font-black text-primary mb-2">Harga Kredit</h4>
+                        <div class="flex items-baseline gap-2 mb-8">
+                            <span class="text-4xl font-black text-primary">Rp 2.400.000</span>
+                            <span class="text-sm font-bold text-gray-400">/ Karung</span>
+                        </div>
+                        
+                        <ul class="space-y-5 mb-12 flex-grow">
+                            <li class="flex items-center gap-4 text-gray-600">
+                                <i class="fas fa-check-circle text-accent"></i>
+                                <span class="font-bold text-primary">Tenor Cicilan 5 Bulan</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-gray-600">
+                                <i class="fas fa-check-circle text-accent"></i>
+                                <span>Isi 30 pcs (Total 60 Kg)</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-gray-600">
+                                <i class="fas fa-check-circle text-accent"></i>
+                                <span>Syarat & Ketentuan Mudah</span>
+                            </li>
+                        </ul>
+
+                        <a href="https://wa.me/{{ $site_settings['contact_whatsapp'] ?? '6281373493884' }}" class="btn-secondary w-full justify-center py-5 rounded-2xl font-bold">
+                            Ajukan Kredit Sekarang
+                        </a>
                     </div>
                 </div>
             </div>
@@ -114,38 +246,6 @@
     </section>
 
     <!-- Manfaat Section -->
-    <section class="section-padding bg-background relative overflow-hidden">
-        <div class="container-custom">
-            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
-                <span class="text-primary font-black tracking-widest uppercase text-sm">Keunggulan Utama</span>
-                <h2 class="section-title text-primary mt-4">Manfaat Sawit Prima Organik</h2>
-                <div class="w-20 h-1.5 bg-accent mx-auto mt-6 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                @php
-                    $manfaat = [
-                        ['title' => 'Menyuburkan Tanah', 'desc' => 'Memperbaiki struktur biologi tanah yang rusak akibat pemakaian kimia jangka panjang.', 'icon' => 'fa-seedling'],
-                        ['title' => 'Menguatkan Perakaran', 'desc' => 'Merangsang pertumbuhan akar rambut secara masif untuk jangkauan nutrisi lebih luas.', 'icon' => 'fa-project-diagram'],
-                        ['title' => 'Meningkatkan Hasil', 'desc' => 'Meningkatkan bobot TBS dan rendemen CPO secara signifikan pada setiap panen.', 'icon' => 'fa-chart-line'],
-                        ['title' => 'Kesehatan Tanaman', 'desc' => 'Meningkatkan imunitas tanaman terhadap serangan penyakit dan perubahan cuaca ekstrem.', 'icon' => 'fa-shield-heart'],
-                        ['title' => 'Ramah Lingkungan', 'desc' => '100% aman bagi ekosistem perkebunan dan mendukung pertanian berkelanjutan.', 'icon' => 'fa-leaf'],
-                        ['title' => 'TBM & TM', 'desc' => 'Efektif untuk Tanaman Belum Menghasilkan maupun Tanaman Menghasilkan.', 'icon' => 'fa-tree'],
-                    ];
-                @endphp
-
-                @foreach($manfaat as $m)
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-soft hover-lift group border border-gray-100" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
-                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary text-2xl mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                        <i class="fas {{ $m['icon'] }}"></i>
-                    </div>
-                    <h4 class="font-bold text-primary text-xl mb-4 tracking-tight">{{ $m['title'] }}</h4>
-                    <p class="text-gray-500 leading-relaxed">{{ $m['desc'] }}</p>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
 
     <!-- Kandungan Infografis -->
     <section class="section-padding bg-white">
@@ -281,11 +381,11 @@
                 <div class="absolute -right-20 -top-20 w-80 h-80 bg-accent/20 rounded-full blur-[100px]"></div>
 
                 <div class="relative z-10">
-                    <h2 class="text-4xl md:text-6xl font-black mb-10 leading-tight">Siap Untuk Panen <br><span class="text-gradient-gold">Terbaik</span> Anda?</h2>
-                    <p class="text-xl text-white/70 mb-14 max-w-2xl mx-auto leading-relaxed">Bergabunglah dengan mitra petani sukses kami lainnya. Dapatkan konsultasi program pemupukan gratis hari ini.</p>
+                    <h2 class="text-4xl md:text-6xl font-black mb-10 leading-tight">Konsultasikan Kebutuhan <br>Kebun <span class="text-gradient-gold">Sawit</span> Anda</h2>
+                    <p class="text-xl text-white/70 mb-14 max-w-2xl mx-auto leading-relaxed">Dapatkan perhitungan dosis yang tepat dan penawaran harga terbaik untuk kebun sawit Anda bersama tim agronomis kami.</p>
                     <div class="flex flex-col sm:flex-row justify-center gap-8">
-                        <a href="https://wa.me/628123456789" class="btn-secondary py-6 px-14 text-xl font-black shadow-2xl hover:scale-105 transition-all">Hubungi Kami <i class="fab fa-whatsapp ml-3"></i></a>
-                        <a href="#" class="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition px-14 py-6 rounded-[1.5rem] font-bold text-xl">Unduh Katalog PDF</a>
+                        <a href="https://wa.me/{{ $site_settings['contact_whatsapp'] ?? '6281373493884' }}" class="btn-secondary py-6 px-14 text-xl font-black shadow-2xl hover:scale-105 transition-all">Hubungi WhatsApp <i class="fab fa-whatsapp ml-3"></i></a>
+                        <a href="{{ route('contact') }}" class="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition px-14 py-6 rounded-[1.5rem] font-bold text-xl">Kontak Kami</a>
                     </div>
                 </div>
             </div>

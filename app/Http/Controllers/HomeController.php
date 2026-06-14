@@ -14,9 +14,9 @@ class HomeController extends Controller
     {
         $banners = Banner::where('is_active', true)->orderBy('order')->get();
         $testimonials = Testimonial::where('is_active', true)->latest()->take(6)->get();
-        $featured_products = Gallery::where('category', 'Produk')->where('is_active', true)->latest()->take(3)->get();
+        $galleries = Gallery::where('is_active', true)->latest()->take(3)->get();
         
-        return view('pages.home', compact('banners', 'testimonials', 'featured_products'));
+        return view('pages.home', compact('banners', 'testimonials', 'galleries'));
     }
 
     public function product()

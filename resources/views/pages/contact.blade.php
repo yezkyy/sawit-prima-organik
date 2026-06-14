@@ -33,7 +33,7 @@
                             </div>
                             <div>
                                 <h5 class="font-bold text-xl text-primary mb-2">Kantor Pusat</h5>
-                                <p class="text-gray-500 leading-relaxed">Pekanbaru - Riau<br>Indonesia</p>
+                                <p class="text-gray-500 leading-relaxed">{{ $site_settings['contact_address'] ?? 'Pekanbaru - Riau, Indonesia' }}</p>
                             </div>
                         </div>
                         <div class="flex gap-6 group">
@@ -42,7 +42,7 @@
                             </div>
                             <div>
                                 <h5 class="font-bold text-xl text-primary mb-2">Telepon / WA</h5>
-                                <p class="text-gray-500 leading-relaxed">+62 812 3456 7890<br>+62 811 9876 543</p>
+                                <p class="text-gray-500 leading-relaxed">+{{ substr($site_settings['contact_whatsapp'] ?? '6281373493884', 0, 2) }} {{ substr($site_settings['contact_whatsapp'] ?? '6281373493884', 2) }}</p>
                             </div>
                         </div>
                         <div class="flex gap-6 group">
@@ -51,7 +51,7 @@
                             </div>
                             <div>
                                 <h5 class="font-bold text-xl text-primary mb-2">Email Resmi</h5>
-                                <p class="text-gray-500 leading-relaxed">info@sawitprima.com<br>sales@sawitprima.com</p>
+                                <p class="text-gray-500 leading-relaxed">{{ $site_settings['contact_email'] ?? 'sawitprimaindonesia@gmail.com' }}</p>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <div class="absolute top-0 right-0 w-32 h-32 bg-accent/20 rounded-full blur-2xl -mr-16 -mt-16"></div>
                         <h4 class="font-bold text-2xl mb-4 relative z-10">Layanan Pelanggan</h4>
                         <p class="text-white/70 mb-8 relative z-10">Senin - Jumat: 08.00 - 17.00 WIB<br>Sabtu: 08.00 - 14.00 WIB</p>
-                        <a href="https://wa.me/628123456789" class="inline-flex items-center gap-3 font-bold text-accent hover:text-white transition-colors relative z-10">
+                        <a href="https://wa.me/{{ $site_settings['contact_whatsapp'] ?? '6281373493884' }}" class="inline-flex items-center gap-3 font-bold text-accent hover:text-white transition-colors relative z-10">
                             Chat via WhatsApp <i class="fas fa-arrow-right text-sm"></i>
                         </a>
                     </div>

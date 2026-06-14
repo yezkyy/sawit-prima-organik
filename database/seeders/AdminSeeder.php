@@ -18,7 +18,7 @@ class AdminSeeder extends Seeder
     {
         // Admin User
         User::updateOrCreate(
-            ['email' => 'admin@sawitprima.com'],
+            ['email' => 'admin@sawitprima.my.id'],
             [
                 'name' => 'Admin Sawit Prima',
                 'password' => Hash::make('password'),
@@ -38,9 +38,9 @@ class AdminSeeder extends Seeder
             ['key' => 'meta_keywords', 'value' => 'pupuk sawit, pupuk organik, kelapa sawit, sawit prima organik, booster sawit', 'group' => 'seo'],
             
             // Contact
-            ['key' => 'contact_whatsapp', 'value' => '6281234567890', 'group' => 'contact'],
-            ['key' => 'contact_email', 'value' => 'info@sawitprima.com', 'group' => 'contact'],
-            ['key' => 'contact_address', 'value' => 'Jl. Kebun Sawit No. 1, Riau, Indonesia', 'group' => 'contact'],
+            ['key' => 'contact_whatsapp', 'value' => '6281373493884', 'group' => 'contact'],
+            ['key' => 'contact_email', 'value' => 'sawitprimaindonesia@gmail.com', 'group' => 'contact'],
+            ['key' => 'contact_address', 'value' => 'Pekanbaru - Riau', 'group' => 'contact'],
             ['key' => 'contact_maps', 'value' => 'https://www.google.com/maps/embed?pb=...', 'group' => 'contact'],
         ];
 

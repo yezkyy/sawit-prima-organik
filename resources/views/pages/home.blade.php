@@ -8,71 +8,120 @@
         <!-- Background Pattern -->
         <div class="absolute inset-0 z-0 opacity-10 bg-pattern"></div>
         
-        <div class="container-custom relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                <!-- Hero Content -->
-                <div class="text-white order-2 lg:order-1" data-aos="fade-right">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
-                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                        <span class="text-xs font-bold tracking-widest uppercase">Premium Bio-Technology</span>
-                    </div>
-                    
-                    <h1 class="hero-title mb-8">
-                        Solusi Panen <br>
-                        <span class="text-gradient-gold">Melimpah</span> <br>
-                        Berkelanjutan
-                    </h1>
-                    
-                    <p class="text-lg md:text-xl text-white/70 mb-12 max-w-xl leading-relaxed">
-                        Sawit Prima Organik menghadirkan formula premium yang diperkaya Asam Humat dan Konsorsium Mikroba Aktif untuk meningkatkan bobot TBS dan kesehatan tanah secara instan.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-                        <a href="{{ route('contact') }}" class="btn-secondary px-10 py-5 text-lg font-bold shadow-2xl">
-                            Konsultasi Gratis <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-accent text-xl backdrop-blur-md">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="text-sm">
-                                <p class="font-bold text-white">5,000+ Mitra Petani</p>
-                                <p class="text-white/50 text-xs">Telah Membuktikan Hasilnya</p>
+        @if(isset($banners) && $banners->count() > 1)
+            <!-- Swiper Slider -->
+            <div class="swiper banner-swiper w-full h-full relative z-10">
+                <div class="swiper-wrapper">
+                    @foreach($banners as $banner)
+                    <div class="swiper-slide h-auto">
+                        <div class="container-custom relative z-10 flex items-center h-full pt-8">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full">
+                                <!-- Hero Content -->
+                                <div class="text-white order-2 lg:order-1" data-aos="fade-right">
+                                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
+                                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                                        <span class="text-xs font-bold tracking-widest uppercase">Premium Bio-Technology</span>
+                                    </div>
+                                    
+                                    <h1 class="hero-title mb-8 text-4xl lg:text-6xl font-black leading-tight">
+                                        {{ $banner->title }}
+                                    </h1>
+                                    
+                                    <p class="text-lg md:text-xl text-white/70 mb-12 max-w-xl leading-relaxed">
+                                        {{ $banner->description }}
+                                    </p>
+                                    
+                                    <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                                        <a href="{{ $banner->link ?? 'https://wa.me/' . ($site_settings['contact_whatsapp'] ?? '6281234567890') }}" class="btn-secondary px-10 py-5 text-lg font-bold shadow-2xl">
+                                            {{ $banner->link ? 'Selengkapnya' : 'Konsultasi Gratis' }} <i class="fas fa-arrow-right ml-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Product Showcase (Hero) -->
+                                <div class="relative order-1 lg:order-2" data-aos="fade-left">
+                                    <div class="relative z-10 hero-image">
+                                        <div class="absolute inset-0 bg-accent/20 blur-[150px] rounded-full"></div>
+                                        <img src="{{ asset('storage/' . $banner->image) }}" alt="{{ $banner->title }}" class="relative z-10 w-full max-w-[500px] mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] float-animation rounded-[2rem] object-cover aspect-video">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
-
-                <!-- Product Showcase (Hero) -->
-                <div class="relative order-1 lg:order-2" data-aos="fade-left">
-                    <div class="relative z-10 hero-image">
-                        <div class="absolute inset-0 bg-accent/20 blur-[150px] rounded-full"></div>
-                        <img src="{{ asset('images/products/Sawit_Prima_Front.png') }}" alt="Sawit Prima Organik Packaging" class="relative z-10 w-full max-w-[500px] mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] float-animation" onerror="this.src='https://placehold.co/600x800/0F4D2E/D8A320?text=Sawit+Prima+Front'">
+                <div class="swiper-pagination-banner absolute bottom-10 left-0 w-full flex justify-center z-50"></div>
+            </div>
+        @else
+            @php 
+                $banner = isset($banners) && $banners->count() > 0 ? $banners->first() : null; 
+            @endphp
+            <div class="container-custom relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <!-- Hero Content -->
+                    <div class="text-white order-2 lg:order-1" data-aos="fade-right">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
+                            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                            <span class="text-xs font-bold tracking-widest uppercase">Premium Bio-Technology</span>
+                        </div>
                         
-                        <!-- Floating Badges -->
-                        <div class="absolute top-1/4 -left-4 lg:-left-12 z-20 glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce shadow-accent/10" style="animation-duration: 3s">
-                            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <div>
-                                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">Formula</p>
-                                <p class="text-sm font-black text-primary">100% Organik</p>
+                        <h1 class="hero-title mb-8 text-4xl lg:text-6xl font-black leading-tight">
+                            {!! $banner ? $banner->title : 'Pupuk Organik <br><span class="text-gradient-gold">Premium</span> <br>Khusus Kelapa Sawit' !!}
+                        </h1>
+                        
+                        <p class="text-lg md:text-xl text-white/70 mb-12 max-w-xl leading-relaxed">
+                            {{ $banner ? $banner->description : 'Solusi modern untuk meningkatkan produktivitas TBS dengan teknologi bio-nutrisi lengkap. Hasil panen melimpah, tanah tetap sehat berkelanjutan.' }}
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                            <a href="{{ $banner->link ?? 'https://wa.me/' . ($site_settings['contact_whatsapp'] ?? '6281234567890') }}" class="btn-secondary px-10 py-5 text-lg font-bold shadow-2xl">
+                                {{ isset($banner->link) ? 'Selengkapnya' : 'Konsultasi Gratis' }} <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-accent text-xl backdrop-blur-md">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="text-sm">
+                                    <p class="font-bold text-white">5,000+ Mitra Petani</p>
+                                    <p class="text-white/50 text-xs">Telah Membuktikan Hasilnya</p>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="absolute bottom-1/4 -right-4 lg:-right-12 z-20 glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce shadow-primary/10" style="animation-duration: 4s">
-                            <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-white">
-                                <i class="fas fa-flask"></i>
-                            </div>
-                            <div>
-                                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">Diperkaya</p>
-                                <p class="text-sm font-black text-primary">Asam Humat</p>
-                            </div>
+                    <!-- Product Showcase (Hero) -->
+                    <div class="relative order-1 lg:order-2" data-aos="fade-left">
+                        <div class="relative z-10 hero-image">
+                            <div class="absolute inset-0 bg-accent/20 blur-[150px] rounded-full"></div>
+                            @if($banner)
+                                <img src="{{ asset('storage/' . $banner->image) }}" alt="{{ $banner->title }}" class="relative z-10 w-full max-w-[500px] mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] float-animation rounded-[2rem] object-cover aspect-video">
+                            @else
+                                <img src="{{ asset('images/products/Sawit_Prima_Front.png') }}" alt="Sawit Prima Organik Packaging" class="relative z-10 w-full max-w-[500px] mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] float-animation" onerror="this.src='https://placehold.co/600x800/0F4D2E/D8A320?text=Sawit+Prima+Front'">
+                                <!-- Floating Badges -->
+                                <div class="absolute top-1/4 -left-4 lg:-left-12 z-20 glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce shadow-accent/10" style="animation-duration: 3s">
+                                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+                                        <i class="fas fa-leaf"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">Formula</p>
+                                        <p class="text-sm font-black text-primary">100% Organik</p>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-1/4 -right-4 lg:-right-12 z-20 glass-card p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce shadow-primary/10" style="animation-duration: 4s">
+                                    <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center text-white">
+                                        <i class="fas fa-flask"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">Diperkaya</p>
+                                        <p class="text-sm font-black text-primary">Asam Humat</p>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
     </section>
 
     <!-- Trusted Section -->
@@ -393,33 +442,7 @@
 
             <div class="swiper testimonial-swiper pb-16" data-aos="fade-up">
                 <div class="swiper-wrapper">
-                    @php
-                        $displayTestimonials = $testimonials->count() > 0 ? $testimonials : collect([
-                            (object)[
-                                'id' => 1,
-                                'name' => 'H. Ahmad Subarjo',
-                                'location' => 'Riau, Pekanbaru',
-                                'content' => 'Setelah pakai Sawit Prima Organik, hasil panen saya naik dari 1.8 ton jadi 2.4 ton per hektar. Berat janjangannya benar-benar terasa bedanya.',
-                                'image' => null
-                            ],
-                            (object)[
-                                'id' => 2,
-                                'name' => 'Bpk. Nyoman Weda',
-                                'location' => 'Kalimantan Barat',
-                                'content' => 'Tanah yang dulunya keras sekarang jadi lebih gembur. Akar sawit jadi lebih sehat dan buah tidak gampang trek di musim kemarau.',
-                                'image' => null
-                            ],
-                            (object)[
-                                'id' => 3,
-                                'name' => 'Ibu Siti Aminah',
-                                'location' => 'Sumatera Selatan',
-                                'content' => 'Sangat praktis aplikasinya. Campuran dengan kimia juga aman, malah jadi lebih hemat biaya pupuk keseluruhan sampai 30%.',
-                                'image' => null
-                            ]
-                        ]);
-                    @endphp
-
-                    @foreach($displayTestimonials as $t)
+                    @forelse($testimonials as $t)
                     <div class="swiper-slide h-auto">
                         <div class="bg-white p-10 rounded-[2rem] shadow-soft h-full flex flex-col border border-gray-100 hover:border-primary/20 transition-colors duration-500">
                             <div class="flex text-accent gap-1 mb-8">
@@ -445,9 +468,19 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                    @empty
+                    <div class="w-full flex flex-col items-center justify-center py-16 px-4">
+                        <div class="w-24 h-24 bg-primary/5 rounded-full flex items-center justify-center text-primary text-4xl mb-6">
+                            <i class="fa-regular fa-comments"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-primary mb-2 text-center">Belum Ada Testimoni</h4>
+                        <p class="text-gray-500 text-center max-w-md">Jadilah yang pertama membuktikan kehebatan pupuk organik Sawit Prima. Kami menantikan kisah sukses Anda!</p>
+                    </div>
+                    @endforelse
                 </div>
+                @if($testimonials->count() > 0)
                 <div class="swiper-pagination-test flex justify-center mt-8"></div>
+                @endif
             </div>
         </div>
     </section>
@@ -463,39 +496,201 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
-                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-2xl bg-primary/5 p-8 flex items-center justify-center">
-                    <img src="{{ asset('images/products/Sawit_Prima_Front.png') }}" alt="Aplikasi Pupuk" class="w-full h-auto object-contain transition duration-1000 group-hover:scale-110">
+                @forelse($galleries as $gallery)
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-2xl bg-primary/5 p-8 flex items-center justify-center {{ $loop->iteration == 2 ? 'lg:mt-12' : '' }}">
+                    <img src="{{ asset('storage/' . $gallery->image) }}" alt="{{ $gallery->title }}" class="w-full h-auto object-contain transition duration-1000 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-10">
                         <div>
-                            <p class="text-accent font-bold text-xs uppercase tracking-widest mb-2">Produk Utama</p>
-                            <h4 class="text-white font-bold text-xl">Sawit Prima Front View</h4>
+                            <p class="text-accent font-bold text-xs uppercase tracking-widest mb-2">{{ $gallery->category }}</p>
+                            <h4 class="text-white font-bold text-xl">{{ $gallery->title }}</h4>
                         </div>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-2xl lg:mt-12 bg-primary/5 p-8 flex items-center justify-center">
-                    <img src="{{ asset('images/products/Sawit_Prima_Back.png') }}" alt="Panen Sawit" class="w-full h-auto object-contain transition duration-1000 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-10">
-                        <div>
-                            <p class="text-accent font-bold text-xs uppercase tracking-widest mb-2">Informasi Teknis</p>
-                            <h4 class="text-white font-bold text-xl">Sawit Prima Back View</h4>
-                        </div>
+                @empty
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 flex flex-col items-center justify-center py-16 px-4 bg-gray-50 rounded-[2rem] border border-gray-100">
+                    <div class="w-24 h-24 bg-primary/5 rounded-full flex items-center justify-center text-primary text-4xl mb-6">
+                        <i class="fa-regular fa-images"></i>
                     </div>
+                    <h4 class="text-2xl font-bold text-primary mb-2 text-center">Belum Ada Dokumentasi</h4>
+                    <p class="text-gray-500 text-center max-w-md">Dokumentasi kegiatan dan produk akan segera kami tampilkan di sini.</p>
                 </div>
-                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-2xl bg-primary/5 p-8 flex items-center justify-center">
-                    <img src="{{ asset('images/products/Sawit_Prima_Front.png') }}" alt="Kebun Sawit" class="w-full h-auto object-contain transition duration-1000 group-hover:scale-110 blur-[1px] group-hover:blur-0">
-                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-10">
-                        <div>
-                            <p class="text-accent font-bold text-xs uppercase tracking-widest mb-2">Plantation</p>
-                            <h4 class="text-white font-bold text-xl">Kesehatan Perakaran</h4>
-                        </div>
-                    </div>
-                </div>
+                @endforelse
             </div>
             
             <div class="text-center mt-20">
                 <a href="{{ route('gallery') }}" class="inline-flex items-center gap-4 px-8 py-4 rounded-xl border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all duration-300">
                     Eksplor Galeri Kegiatan <i class="fas fa-arrow-right"></i>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rekomendasi Pemakaian Section -->
+    <section class="section-padding bg-background relative overflow-hidden">
+        <div class="container-custom relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <span class="text-primary font-black tracking-widest uppercase text-sm">Panduan Aplikasi</span>
+                <h2 class="section-title text-primary mt-4">Rekomendasi Pemakaian</h2>
+                <div class="w-20 h-1.5 bg-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                <!-- 1 Pcs Info -->
+                <div class="bg-white p-10 rounded-[3rem] shadow-soft border border-gray-100 flex flex-col md:flex-row gap-8 items-center group hover:border-primary/20 transition-all duration-500" data-aos="fade-right">
+                    <div class="w-32 h-32 shrink-0 bg-primary/5 rounded-[2rem] flex items-center justify-center text-primary text-5xl group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-black text-primary mb-4">Kemasan Satuan (Pcs)</h4>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            1 pcs Sawit Prima Organik memiliki berat <span class="font-bold text-primary">2 Kg</span>. Direkomendasikan untuk memenuhi kebutuhan nutrisi sekitar <span class="font-bold text-primary">8 pokok</span> kelapa sawit.
+                        </p>
+                        <div class="flex items-center gap-4 text-sm font-bold text-primary/60">
+                            <span class="px-4 py-2 bg-primary/5 rounded-lg">2 Kg / Pcs</span>
+                            <span class="px-4 py-2 bg-primary/5 rounded-lg">± 8 Pokok Sawit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1 Karung Info -->
+                <div class="bg-white p-10 rounded-[3rem] shadow-soft border border-gray-100 flex flex-col md:flex-row gap-8 items-center group hover:border-primary/20 transition-all duration-500" data-aos="fade-left">
+                    <div class="w-32 h-32 shrink-0 bg-accent/10 rounded-[2rem] flex items-center justify-center text-accent text-5xl group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-black text-primary mb-4">Kemasan Karung (Bag)</h4>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            1 karung berisi <span class="font-bold text-primary">30 pcs</span> dengan total berat <span class="font-bold text-primary">60 Kg</span>. Sangat efektif untuk mencukupi kebutuhan sekitar <span class="font-bold text-primary">2 hektar</span> lahan kelapa sawit.
+                        </p>
+                        <div class="flex items-center gap-4 text-sm font-bold text-primary/60">
+                            <span class="px-4 py-2 bg-accent/5 rounded-lg text-accent">60 Kg / Karung</span>
+                            <span class="px-4 py-2 bg-accent/5 rounded-lg text-accent">± 2 Hektar Lahan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilihan Pembelian Section -->
+    <section class="section-padding bg-white relative overflow-hidden">
+        <div class="container-custom">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <span class="text-primary font-black tracking-widest uppercase text-sm">Purchase Options</span>
+                <h2 class="section-title text-primary mt-4">Pilihan Pembelian</h2>
+                <div class="w-20 h-1.5 bg-accent mx-auto mt-6 rounded-full"></div>
+                <p class="mt-8 text-gray-500">Kami menyediakan kemudahan bagi petani dan pengusaha perkebunan dengan program pembayaran yang fleksibel.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Pembelian Tunai -->
+                <div class="relative group" data-aos="fade-right">
+                    <div class="absolute inset-0 bg-primary/5 rounded-[3.5rem] rotate-3 transition-transform duration-500 group-hover:rotate-0"></div>
+                    <div class="relative bg-white p-10 lg:p-14 rounded-[3.5rem] border border-gray-100 shadow-xl overflow-hidden flex flex-col h-full">
+                        <div class="mb-8">
+                            <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-widest">Pembelian Tunai</span>
+                        </div>
+                        <h4 class="text-3xl font-black text-primary mb-2">Harga Tunai</h4>
+                        <div class="flex items-baseline gap-2 mb-8">
+                            <span class="text-sm font-bold text-gray-400">Mulai</span>
+                            <span class="text-4xl font-black text-primary">Rp 2.000.000</span>
+                            <span class="text-sm font-bold text-gray-400">/ Karung</span>
+                        </div>
+                        
+                        <ul class="space-y-5 mb-12 flex-grow">
+                            <li class="flex items-center gap-4 text-gray-600">
+                                <i class="fas fa-check-circle text-primary"></i>
+                                <span>Isi 30 pcs (Total 60 Kg)</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-gray-600">
+                                <i class="fas fa-check-circle text-primary"></i>
+                                <span>Estimasi untuk ± 2 Hektar</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-gray-600">
+                                <i class="fas fa-check-circle text-primary"></i>
+                                <span>Pupuk Organik Premium</span>
+                            </li>
+                        </ul>
+
+                        <a href="https://wa.me/{{ $site_settings['contact_whatsapp'] ?? '6281373493884' }}" class="btn-primary w-full justify-center py-5 rounded-2xl font-bold">
+                            Pesan Tunai Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pembelian Kredit -->
+                <div class="relative group" data-aos="fade-left">
+                    <div class="absolute inset-0 bg-accent/10 rounded-[3.5rem] -rotate-3 transition-transform duration-500 group-hover:rotate-0"></div>
+                    <div class="relative bg-white p-10 lg:p-14 rounded-[3.5rem] border border-gray-100 shadow-xl overflow-hidden flex flex-col h-full">
+                        <div class="absolute top-8 right-8">
+                            <span class="px-4 py-1.5 rounded-full bg-accent text-white text-[10px] font-black uppercase tracking-widest shadow-lg animate-pulse">Program Kredit Tersedia</span>
+                        </div>
+                        <div class="mb-8">
+                            <span class="px-4 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-black uppercase tracking-widest">Pembelian Kredit</span>
+                        </div>
+                        <h4 class="text-3xl font-black text-primary mb-2">Harga Kredit</h4>
+                        <div class="flex items-baseline gap-2 mb-8">
+                            <span class="text-4xl font-black text-primary">Rp 2.400.000</span>
+                            <span class="text-sm font-bold text-gray-400">/ Karung</span>
+                        </div>
+                        
+                        <ul class="space-y-5 mb-12 flex-grow">
+                            <li class="flex items-center gap-4 text-gray-600">
+                                <i class="fas fa-check-circle text-accent"></i>
+                                <span class="font-bold text-primary">Tenor 5 Bulan</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-gray-600">
+                                <i class="fas fa-check-circle text-accent"></i>
+                                <span>Isi 30 pcs (Total 60 Kg)</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-gray-600">
+                                <i class="fas fa-check-circle text-accent"></i>
+                                <span>Estimasi untuk ± 2 Hektar</span>
+                            </li>
+                        </ul>
+
+                        <a href="https://wa.me/{{ $site_settings['contact_whatsapp'] ?? '6281373493884' }}" class="btn-secondary w-full justify-center py-5 rounded-2xl font-bold">
+                            Ajukan Kredit Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding bg-background relative overflow-hidden">
+        <div class="container-custom relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <span class="text-primary font-black tracking-widest uppercase text-sm">FAQ</span>
+                <h2 class="section-title text-primary mt-4">Pertanyaan Umum</h2>
+                <div class="w-20 h-1.5 bg-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4" data-aos="fade-up">
+                @php
+                    $faqs = [
+                        ['q' => 'Apa keunggulan utama Sawit Prima Organik dibanding pupuk lain?', 'a' => 'Sawit Prima Organik mengandung kombinasi Asam Humat, Mikoriza, Trichoderma, dan Bacillus Sp. yang tidak hanya memberi nutrisi tapi juga memperbaiki struktur tanah dan melindungi akar dari penyakit seperti Ganoderma.'],
+                        ['q' => 'Berapa lama hasil pemupukan mulai terlihat?', 'a' => 'Secara visual, kesehatan daun dan kecepatan pertumbuhan akar mulai terlihat dalam 2-4 minggu. Untuk bobot TBS, hasil signifikan biasanya terlihat pada siklus panen berikutnya setelah pemakaian rutin.'],
+                        ['q' => 'Apakah aman digunakan bersamaan dengan pupuk kimia?', 'a' => 'Sangat aman dan justru direkomendasikan. Sawit Prima Organik membantu meningkatkan efisiensi penyerapan pupuk kimia (NPK) sehingga Anda bisa mengurangi dosis pupuk kimia secara bertahap.'],
+                        ['q' => 'Bagaimana cara pengajuan program kredit 5 bulan?', 'a' => 'Anda cukup menghubungi tim administrasi kami via WhatsApp dengan melampirkan identitas diri dan lokasi kebun. Tim kami akan melakukan verifikasi singkat sebelum menyetujui pengajuan kredit Anda.'],
+                        ['q' => 'Di mana saya bisa mendapatkan produk ini?', 'a' => 'Kami melayani pengiriman ke seluruh wilayah Indonesia, khususnya area Riau dan sekitarnya. Pemesanan dapat dilakukan langsung melalui website ini atau WhatsApp resmi kami.'],
+                    ];
+                @endphp
+
+                @foreach($faqs as $faq)
+                <div x-data="{ open: false }" class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button @click="open = !open" class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                        <span class="font-bold text-primary text-lg">{{ $faq['q'] }}</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300" :class="open ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="open" x-collapse x-cloak>
+                        <div class="px-8 pb-8 text-gray-600 leading-relaxed">
+                            {{ $faq['a'] }}
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -514,33 +709,33 @@
                     <div class="text-center lg:text-left">
                         <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-accent mb-8">Ready to Boost Your Yield?</div>
                         <h2 class="text-4xl md:text-6xl font-heading font-black text-white mb-10 leading-[1.1]">
-                            Siap Bergabung dengan Ribuan Petani <span class="text-gradient-gold">Sukses</span>?
+                            Konsultasikan Kebutuhan <span class="text-gradient-gold">Pupuk</span> Kebun Sawit Anda
                         </h2>
                         <p class="text-xl text-white/70 mb-14 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                            Dapatkan penawaran harga spesial untuk pembelian partai besar dan konsultasi program pemupukan gratis bersama ahli agronomis kami.
+                            Tim ahli kami siap membantu Anda menghitung kebutuhan nutrisi yang tepat untuk mengoptimalkan hasil panen kebun sawit Anda.
                         </p>
 
                         <!-- Trust Elements -->
                         <div class="flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-8 mb-16">
                             <div class="flex items-center gap-3 text-white/90 font-bold">
                                 <i class="fas fa-check-circle text-accent text-xl"></i>
-                                <span>Organik Premium</span>
+                                <span>Tersedia Program Kredit</span>
                             </div>
                             <div class="flex items-center gap-3 text-white/90 font-bold">
                                 <i class="fas fa-check-circle text-accent text-xl"></i>
-                                <span>Asam Humat</span>
+                                <span>Pekanbaru - Riau</span>
                             </div>
                             <div class="flex items-center gap-3 text-white/90 font-bold">
                                 <i class="fas fa-check-circle text-accent text-xl"></i>
-                                <span>Mikoriza Aktif</span>
+                                <span>Respon Cepat</span>
                             </div>
                         </div>
                         
                         <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-8">
-                            <a href="https://wa.me/628123456789" target="_blank" class="w-full sm:w-auto bg-white text-primary px-12 py-6 rounded-2xl text-xl font-black shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-4">
-                                <i class="fab fa-whatsapp text-2xl"></i> WhatsApp
+                            <a href="https://wa.me/{{ $site_settings['contact_whatsapp'] ?? '6281373493884' }}" target="_blank" class="w-full sm:w-auto bg-white text-primary px-12 py-6 rounded-2xl text-xl font-black shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-4">
+                                <i class="fab fa-whatsapp text-2xl"></i> Hubungi WhatsApp
                             </a>
-                            <a href="{{ route('contact') }}" class="text-white font-bold border-b-2 border-accent hover:text-accent transition-colors duration-300">Konsultasi Gratis</a>
+                            <a href="{{ route('product') }}" class="text-white font-bold border-b-2 border-accent hover:text-accent transition-colors duration-300">Lihat Detail Produk</a>
                         </div>
                     </div>
 
@@ -558,6 +753,24 @@
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // Initialize Swiper for Banners
+        new Swiper('.banner-swiper', {
+            slidesPerView: 1,
+            loop: true,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination-banner',
+                clickable: true,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            }
+        });
+
         // Initialize Swiper for Testimonials
         new Swiper('.testimonial-swiper', {
             slidesPerView: 1,

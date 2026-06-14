@@ -10,7 +10,7 @@ class="fixed top-0 w-full z-[100] transition-all duration-500 flex items-center"
             <!-- Logo -->
             <div class="flex-shrink-0">
                 <a href="{{ route('home') }}" class="group flex items-center">
-                    <img src="{{ asset('images/logo.png') }}" alt="Sawit Prima Organik" :class="scrolled ? 'h-14' : 'h-16'" class="w-auto transition-all duration-500 drop-shadow-sm">
+                    <img src="{{ !empty($site_settings['site_logo']) ? asset('storage/' . $site_settings['site_logo']) : asset('images/logo.png') }}" alt="{{ $site_settings['site_name'] ?? 'Sawit Prima Organik' }}" :class="scrolled ? 'h-14' : 'h-16'" class="w-auto transition-all duration-500 drop-shadow-sm">
                 </a>
             </div>
 
@@ -37,7 +37,8 @@ class="fixed top-0 w-full z-[100] transition-all duration-500 flex items-center"
                        class="text-sm font-bold uppercase tracking-widest transition-all {{ request()->routeIs('testimonial') ? 'text-accent !text-accent' : '' }}">
                         Testimoni
                     </a>
-                    <a href="{{ route('contact') }}" 
+                    <a href="https://wa.me/{{ $site_settings['contact_whatsapp'] ?? '6281373493884' }}" 
+                       target="_blank" rel="noopener noreferrer"
                        class="btn-secondary py-3 px-8 text-sm font-black shadow-lg hover:scale-105">
                         HUBUNGI KAMI
                     </a>
@@ -66,7 +67,7 @@ class="fixed top-0 w-full z-[100] transition-all duration-500 flex items-center"
             <a href="{{ route('product') }}" class="block text-xl font-black text-primary border-b border-gray-50 pb-4">Produk</a>
             <a href="{{ route('gallery') }}" class="block text-xl font-black text-primary border-b border-gray-50 pb-4">Galeri</a>
             <a href="{{ route('testimonial') }}" class="block text-xl font-black text-primary border-b border-gray-50 pb-4">Testimoni</a>
-            <a href="{{ route('contact') }}" class="btn-primary w-full justify-center py-5 text-lg font-black">HUBUNGI KAMI</a>
+            <a href="https://wa.me/{{ $site_settings['contact_whatsapp'] ?? '6281373493884' }}" target="_blank" rel="noopener noreferrer" class="btn-primary w-full justify-center py-5 text-lg font-black text-center flex">HUBUNGI KAMI</a>
         </div>
     </div>
 </nav>

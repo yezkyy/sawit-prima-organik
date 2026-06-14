@@ -28,6 +28,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('banners', App\Http\Controllers\Admin\BannerController::class);
         Route::resource('galleries', App\Http\Controllers\Admin\GalleryController::class);
         Route::resource('testimonials', App\Http\Controllers\Admin\TestimonialController::class);
+        
+        Route::get('profile', [App\Http\Controllers\Admin\ProfileController::class, 'index'])->name('profile.index');
+        Route::patch('profile', [App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');
+        Route::put('profile/password', [App\Http\Controllers\Admin\ProfileController::class, 'updatePassword'])->name('profile.password');
+
         Route::get('settings', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('settings.index');
         Route::post('settings', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('settings.update');
     });
